@@ -54,8 +54,6 @@ chnh.data = {
       "tags": [
         "Remote"
       ],
-      "locationNames": [],
-      "locations": [],
 
       "index": 21
     },
@@ -143,8 +141,6 @@ chnh.data = {
       "tags": [
         "Remote"
       ],
-      "locationNames": [],
-      "locations": [],
 
       "index": 4
     },
@@ -3280,9 +3276,6 @@ chnh.data = {
       "tags": [
         "UX/UI"
       ],
-      "locationNames": [],
-      "locations": [],
-
       "index": 174
     },
     "6314056": {

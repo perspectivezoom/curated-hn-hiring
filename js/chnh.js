@@ -70,7 +70,7 @@
             var distances = _.map(entry.get('locations'), function (location) { 
               return geolib.getDistance(window.currentLocation.coords, location) + entry.get('index'); //terrible secondary sort hack
             });
-            return Math.min(distances);
+            return Math.min.apply(undefined, distances);
           }
         };
       }
