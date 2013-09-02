@@ -43,15 +43,18 @@
       'click .sort': 'toggleSort'
     },
     toggleSort: function (e) {
+      var that = this;
       if ($(e.currentTarget).text() === 'Location') {
         navigator.geolocation.getCurrentPosition(function (location) {
           window.currentLocation = location;
           $('.sort').removeClass('on');
           $('.sort.location').addClass('on');
+          that.entriesView.render();
         });
       } else {
         $('.sort').removeClass('on');
         $(e.currentTarget).addClass('on');
+        that.entriesView.render();
       }
     },
     comparator: function () {
@@ -64,9 +67,9 @@
           if (!window.currentLocation || !entry.get('location')) {
             return 40000000;
           } else {
-            return geolib.getDistance(window.currentLocation, entry.get('location')) + entry.get('index');//terrible secondary sort hack
+            return geolib.getDistance(window.currentLocation.coords, entry.get('location')) + entry.get('index');//terrible secondary sort hack
           }
-        }
+        };
       }
     }
   });
@@ -90,7 +93,7 @@
           height: 100
         }, 
         {
-          duration:'fast', 
+          duration: 'fast', 
           complete: function () {that.$('.gradient-mask').removeClass('hidden');
         }
       });
@@ -133,5 +136,6 @@
   $('.toggleFilters').on('click', function (e) { $(e.currentTarget).toggleClass('on'); $('.filters').toggleClass('hidden'); });
   $('.toggleSorts').on('click', function (e) { $(e.currentTarget).toggleClass('on'); $('.sorts').toggleClass('hidden'); });
   filtersView.entriesView = entriesView;
+  sortsView.entriesView = entriesView;
   entriesView.render();
 }(window.chnh));
