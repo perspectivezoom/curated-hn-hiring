@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Curated HN Who's Hiring</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.2.1.3.css"/>
+    <link rel="stylesheet" type="text/css" href="css/chnh.css"/>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="button toggleSorts">Sort</div>
+      <div class="button toggleFilters">Filter</div>
+      <div class="title">HN Hiring (Sep 2013)</div>
+    </div>
+    <div class="sorts hidden">
+      <span class="sort button on">Points</span>
+      <span class="sort button location">Location</span>
+    </div>
+    <div class="filters hidden"></div>
+    <ul class="entries"></ul>
+    <div class='footer'>End of Page</div>
+  </body>
+
+  <script type="text/x-chnh" class="entry-list-item">
+    <div class="entry-details">
+      <div class="gradient-mask"></div>
+      <div class='comment-body'>
+        {commentBody}
+      </div>
+    </div>
+  </script>
+
+  <script type="text/javascript">
+    window.chnh = {};
+  </script>
+
+  <script src="data/2013-09.js"></script>
+  <script src="js/lib/geolib.1.3.1.min.js"></script>
+  <script src="js/lib/zepto.1.0.min.js"></script>
+  <script src="js/lib/underscore.1.5.1.min.js"></script>
+  <script src="js/lib/backbone.1.0.0.min.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/chnh.js"></script>
+<html>
