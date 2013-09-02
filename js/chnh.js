@@ -12,7 +12,8 @@
   chnh.Views.Filters = Backbone.View.extend({
     filterNames: ['ApplyToPerson', 'H1B', 'Intern', 'UI/UX', 'Remote', 'CoFounder'],
     events: {
-      'click .filter': 'toggleFilter'
+      'click .filter': 'toggleFilter',
+      'keyup .regex' : 'applyRegex'
     },
     toggleFilter: function (e) {
       if ($(e.currentTarget).hasClass('on')) {
@@ -24,6 +25,22 @@
         $(e.currentTarget).addClass('on');
       }
       this.entriesView.render();
+    },
+    applyRegex: function () {
+      if (this.existingTimeout) {
+        clearTimeout(this.existingTimeout);
+      }
+      var that = this;
+      this.existingTimeout = setTimeout(function () {
+        that.entriesView.render();
+      }, 500);
+    },
+    regex: function () {
+      if (this.$(".regex").val()) {
+        return new RegExp(this.$(".regex").val(), "i");
+      } else {
+        return null;
+      }
     },
     onFilters: function () {
       return this.$('.filter.on').map(function (index, el) {return $(el).text();});
@@ -119,12 +136,15 @@
 
       var onFilters = this.options.filtersView.onFilters();
       var offFilters = this.options.filtersView.offFilters();
+      var regex = this.options.filtersView.regex();
       this.collection.each(function (entry) {
         var tags = entry.get('tags');
         if (_.intersection(tags, onFilters).length === onFilters.length && _.intersection(tags, offFilters).length === 0) {
-          var view = new chnh.Views.Entry({model: entry});
-          this.$el.append(view.render().el);
-          this.entryViews.push(view);
+          if (!regex || (entry.get('commentBody').match(regex))) {
+            var view = new chnh.Views.Entry({model: entry});
+            this.$el.append(view.render().el);
+            this.entryViews.push(view);
+          }
         }
       }, this);
       return this;
