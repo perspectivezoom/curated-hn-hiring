@@ -64,10 +64,13 @@
         };
       } else {
         return function (entry) {
-          if (!window.currentLocation || !entry.get('location')) {
+          if (!window.currentLocation || !entry.get('locations')) {
             return 40000000;
           } else {
-            return geolib.getDistance(window.currentLocation.coords, entry.get('location')) + entry.get('index');//terrible secondary sort hack
+            var distances = _.map(entry.get('locations'), function (location) { 
+              return geolib.getDistance(window.currentLocation.coords, location) + entry.get('index'); //terrible secondary sort hack
+            });
+            return Math.min(distances);
           }
         };
       }
