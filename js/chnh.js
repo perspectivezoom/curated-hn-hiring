@@ -105,18 +105,28 @@
     expandEntry: function (e) {
       this.$('.gradient-mask').addClass('hidden');
       this.$('.entry-details').animate({height: this.$('.comment').height()}, 'fast');
+      this.$('.entry-details').addClass('expanded');
     },
     collapseEntry: function (e) {
       var that = this;
-      this.$('.entry-details').animate(
-        {
-          height: 100
-        }, 
-        {
-          duration: 'fast', 
-          complete: function () {that.$('.gradient-mask').removeClass('hidden');
-        }
-      });
+      if (this.$('.entry-details').hasClass('expanded')) {
+        this.$('.entry-details').animate(
+          {
+            height: 100
+          }, 
+          {
+            duration: 'fast', 
+            complete: function () {
+              that.$('.gradient-mask').removeClass('hidden');
+              that.$('entry-details').removeClass('expanded');
+            }
+          }
+        );
+      } else {
+        this.$('.gradient-mask').addClass('hidden');
+        this.$('.entry-details').animate({height: this.$('.comment').height()}, 'fast');
+        this.$('.entry-details').addClass('expanded');
+      }
     },
     render: function () {
       this.$el.html(this.template(this.model.attributes));
