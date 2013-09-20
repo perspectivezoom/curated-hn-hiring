@@ -79,10 +79,14 @@
         return function (entry) {
          return entry.get('index');
         };
+      } else if ($('.sort.on').text() === 'Recently Added') {
+        return function (entry) {
+         return -1 * entry.get('id');
+        };
       } else {
         return function (entry) {
           if (!window.currentLocation || !entry.get('locations')) {
-            return 40000000;
+            return 40000000; //roughly the circumference of the earth in metersng
           } else {
             var distances = _.map(entry.get('locations'), function (location) { 
               return geolib.getDistance(window.currentLocation.coords, location) + entry.get('index'); //terrible secondary sort hack
@@ -138,8 +142,7 @@
   chnh.Views.Entries = Backbone.View.extend({
     entryViews: [],
     render: function () {
-      _.each(this.entryViews, function (entryView) {entryView.remove();});
-      this.entryViews = [];
+      this.clearEntryViews();
 
       this.collection.comparator = this.options.sortsView.comparator();
       this.collection.sort();
@@ -158,6 +161,10 @@
         }
       }, this);
       return this;
+    },
+    clearEntryViews: function() {
+      _.each(this.entryViews, function (entryView) {entryView.remove();});
+      this.entryViews = [];
     }
   });
 

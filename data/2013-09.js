@@ -3522,7 +3522,7 @@ chnh.data = {
   "metadata": {
     "last_scraped_at": 1378139094317,
     "first_scraped": 1378139094317,
-    "month": "UNKNOWN",
+    "month": "September 2013",
     "url": "https://news.ycombinator.com/item?id=6310234"
   }
 };
