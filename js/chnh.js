@@ -24,15 +24,14 @@
       } else {
         $(e.currentTarget).addClass('on');
       }
-      this.entriesView.render();
+      chnh.vent.trigger('filter');
     },
     applyRegex: function () {
       if (this.existingTimeout) {
         clearTimeout(this.existingTimeout);
       }
-      var that = this;
       this.existingTimeout = setTimeout(function () {
-        that.entriesView.render();
+        chnh.vent.trigger('regex');
       }, 500);
     },
     regex: function () {
@@ -60,18 +59,17 @@
       'click .sort': 'toggleSort'
     },
     toggleSort: function (e) {
-      var that = this;
       if ($(e.currentTarget).text() === 'Location') {
         navigator.geolocation.getCurrentPosition(function (location) {
           window.currentLocation = location;
           $('.sort').removeClass('on');
           $('.sort.location').addClass('on');
-          that.entriesView.render();
+          chnh.vent.trigger('sort');
         });
       } else {
         $('.sort').removeClass('on');
         $(e.currentTarget).addClass('on');
-        that.entriesView.render();
+        chnh.vent.trigger('sort');
       }
     },
     comparator: function () {
@@ -86,7 +84,7 @@
       } else {
         return function (entry) {
           if (!window.currentLocation || !entry.get('locations')) {
-            return 40000000; //roughly the circumference of the earth in metersng
+            return 40000000; //roughly the circumference of the earth in meters
           } else {
             var distances = _.map(entry.get('locations'), function (location) { 
               return geolib.getDistance(window.currentLocation.coords, location) + entry.get('index'); //terrible secondary sort hack
@@ -141,6 +139,11 @@
 
   chnh.Views.Entries = Backbone.View.extend({
     entryViews: [],
+    initialize: function () {
+      chnh.vent.on('filter', this.render, this);
+      chnh.vent.on('sort', this.render, this);
+      chnh.vent.on('regex', this.render, this);
+    },
     render: function () {
       this.clearEntryViews();
 
@@ -168,6 +171,8 @@
     }
   });
 
+  chnh.vent = _.extend({}, Backbone.Events);
+
   var filtersView = new chnh.Views.Filters({el: $('.filters')});
   filtersView.render();
   var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
@@ -175,7 +180,5 @@
   var entriesView = new chnh.Views.Entries({el: $('.entries'), collection: entries, filtersView: filtersView, sortsView: sortsView});
   $('.toggleFilters').on('click', function (e) { $(e.currentTarget).toggleClass('on'); $('.filters').toggleClass('hidden'); });
   $('.toggleSorts').on('click', function (e) { $(e.currentTarget).toggleClass('on'); $('.sorts').toggleClass('hidden'); });
-  filtersView.entriesView = entriesView;
-  sortsView.entriesView = entriesView;
   entriesView.render();
 }(window.chnh));
