@@ -23,8 +23,8 @@
   </head>
   <body>
     <div class="nav">
-      <div class="button toggleSorts">Sort</div>
-      <div class="button toggleFilters">Filter</div>
+      <div data-vent="toggle-sort" class="button vent">Sort</div>
+      <div data-vent="toggle-filter" class="button vent">Filter</div>
       <div class="title">HN Hiring (Sep 2013)</div>
     </div>
     <div class="sorts hidden">
@@ -63,4 +63,7 @@
   <script src="js/lib/backbone.1.0.0.min.js"></script>
   <script src="js/helpers.js"></script>
   <script src="js/chnh.js"></script>
+  <script type="text/javascript">
+    window.chnh.init();
+  </script>
 <html>

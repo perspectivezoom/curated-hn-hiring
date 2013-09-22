@@ -41,7 +41,7 @@ ul {
   cursor: pointer;
 }
 
-.toggleSorts, .toggleFilters {
+.vent.button {
   float: right;
   background-color: #F2BF9D;
 }

@@ -1,4 +1,4 @@
-(function(chnh) {
+(function (chnh) {
   chnh.Models = chnh.Models || {};
   chnh.Collections = chnh.Collections || {};
   chnh.Views = chnh.Views || {};
@@ -14,6 +14,12 @@
     events: {
       'click .filter': 'toggleFilter',
       'keyup .regex' : 'applyRegex'
+    },
+    initialize: function () {
+      chnh.vent.on('toggle-filter', this.toggleOwnDisplay, this);
+    },
+    toggleOwnDisplay: function () {
+      this.$el.toggleClass('hidden');
     },
     toggleFilter: function (e) {
       if ($(e.currentTarget).hasClass('on')) {
@@ -58,6 +64,12 @@
     events: {
       'click .sort': 'toggleSort'
     },
+    initialize: function () {
+      chnh.vent.on('toggle-sort', this.toggleOwnDisplay, this);
+    },
+    toggleOwnDisplay: function () {
+      this.$el.toggleClass('hidden');
+    },
     toggleSort: function (e) {
       if ($(e.currentTarget).text() === 'Location') {
         navigator.geolocation.getCurrentPosition(function (location) {
@@ -86,7 +98,7 @@
           if (!window.currentLocation || !entry.get('locations')) {
             return 40000000; //roughly the circumference of the earth in meters
           } else {
-            var distances = _.map(entry.get('locations'), function (location) { 
+            var distances = _.map(entry.get('locations'), function (location) {
               return geolib.getDistance(window.currentLocation.coords, location) + entry.get('index'); //terrible secondary sort hack
             });
             return Math.min.apply(undefined, distances);
@@ -115,9 +127,9 @@
         this.$('.entry-details').animate(
           {
             height: 100
-          }, 
+          },
           {
-            duration: 'fast', 
+            duration: 'fast',
             complete: function () {
               that.$('.gradient-mask').removeClass('hidden');
               that.$('entry-details').removeClass('expanded');
@@ -134,6 +146,17 @@
       this.$el.html(this.template(this.model.attributes));
       this.$el.find('p').last().remove(); //terrible hack to get rid of reply link
       return this;
+    }
+  });
+
+  chnh.Views.Navigation = Backbone.View.extend({
+    events: {
+      'click .vent.button': 'onVentButton'
+    },
+    onVentButton: function (e) {
+      var $currentTarget = $(e.currentTarget);
+      $currentTarget.toggleClass('on');
+      chnh.vent.trigger($currentTarget.data('vent'));
     }
   });
 
@@ -165,20 +188,21 @@
       }, this);
       return this;
     },
-    clearEntryViews: function() {
-      _.each(this.entryViews, function (entryView) {entryView.remove();});
+    clearEntryViews: function () {
+      _.each(this.entryViews, function (entryView) { entryView.remove(); });
       this.entryViews = [];
     }
   });
 
   chnh.vent = _.extend({}, Backbone.Events);
 
-  var filtersView = new chnh.Views.Filters({el: $('.filters')});
-  filtersView.render();
-  var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
-  var entries = new chnh.Collections.Entries(_.values(chnh.data.entries));
-  var entriesView = new chnh.Views.Entries({el: $('.entries'), collection: entries, filtersView: filtersView, sortsView: sortsView});
-  $('.toggleFilters').on('click', function (e) { $(e.currentTarget).toggleClass('on'); $('.filters').toggleClass('hidden'); });
-  $('.toggleSorts').on('click', function (e) { $(e.currentTarget).toggleClass('on'); $('.sorts').toggleClass('hidden'); });
-  entriesView.render();
+  chnh.init = function () {
+    var filtersView = new chnh.Views.Filters({el: $('.filters')});
+    filtersView.render();
+    var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
+    var nave = new chnh.Views.Navigation({el: $('.nav')});
+    var entries = new chnh.Collections.Entries(_.values(chnh.data.entries));
+    var entriesView = new chnh.Views.Entries({el: $('.entries'), collection: entries, filtersView: filtersView, sortsView: sortsView});
+    entriesView.render();
+  };
 }(window.chnh));
