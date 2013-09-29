@@ -109,7 +109,7 @@
   });
 
   chnh.Views.Entry = Backbone.View.extend({
-    template: chnh.prerender($('.entry-list-item').html()),
+    template: _.template('<div class="entry-details"><div class="gradient-mask"></div><div class="comment-body"><%= commentBody %></div></div>'),
     tagName: 'li',
     className: 'entry',
     events: {
