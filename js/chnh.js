@@ -62,7 +62,8 @@
 
   chnh.Views.Sorts = Backbone.View.extend({
     events: {
-      'click .sort': 'toggleSort'
+      'click .sort': 'toggleSort',
+      'keyup .coords input': 'maybeLocationSort'
     },
     initialize: function () {
       chnh.vent.on('toggle-sort', this.toggleOwnDisplay, this);
@@ -72,12 +73,7 @@
     },
     toggleSort: function (e) {
       if ($(e.currentTarget).text() === 'Location') {
-        navigator.geolocation.getCurrentPosition(function (location) {
-          window.currentLocation = location;
-          $('.sort').removeClass('on');
-          $('.sort.location').addClass('on');
-          chnh.vent.trigger('sort');
-        });
+        this.getLocation();
       } else {
         $('.sort').removeClass('on');
         $(e.currentTarget).addClass('on');
@@ -94,16 +90,35 @@
          return -1 * entry.get('id');
         };
       } else {
+        var lat = parseFloat(this.$('.coords.lat input').val(), 10);
+        var long = parseFloat(this.$('.coords.long input').val(), 10);
         return function (entry) {
-          if (!window.currentLocation || !entry.get('locations')) {
+          if (!entry.get('locations')) {
             return 40000000; //roughly the circumference of the earth in meters
           } else {
             var distances = _.map(entry.get('locations'), function (location) {
-              return geolib.getDistance(window.currentLocation.coords, location) + entry.get('index'); //terrible secondary sort hack
+              return geolib.getDistance({latitude: lat, longitude: long}, location) + entry.get('index'); //terrible secondary sort hack
             });
             return Math.min.apply(undefined, distances);
           }
         };
+      }
+    },
+    getLocation: function () {
+      var that = this;
+      navigator.geolocation.getCurrentPosition(function (location) {
+        $('.coords.lat input').val(location.coords.latitude);
+        $('.coords.long input').val(location.coords.longitude);
+        that.maybeLocationSort();
+      });
+    },
+    maybeLocationSort: function (e) {
+      var lat = parseFloat(this.$('.coords.lat input').val(), 10);
+      var long = parseFloat(this.$('.coords.long input').val(), 10);
+      if (lat && long && !isNaN(lat) && !isNaN(long)) {
+        $('.sort').removeClass('on');
+        $('.sort.location').addClass('on');
+        chnh.vent.trigger('sort');
       }
     }
   });

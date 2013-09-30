@@ -56,6 +56,10 @@ ul {
   background-color: #F2BF9D;
 }
 
+.coords input {
+  width: 90px;
+}
+
 .filters, .sorts {
   padding: 10px 10px 5px 10px;
   background-color: #EEEEEE;
