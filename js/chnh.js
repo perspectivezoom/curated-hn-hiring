@@ -176,20 +176,23 @@
       var onFilters = this.options.filtersView.onFilters();
       var offFilters = this.options.filtersView.offFilters();
       var regex = this.options.filtersView.regex();
+      var $entriesHtml = $('<ul></ul>');
       this.collection.each(function (entry) {
         var tags = entry.get('tags');
         if (_.intersection(tags, onFilters).length === onFilters.length && _.intersection(tags, offFilters).length === 0) {
           if (!regex || (entry.get('commentBody').match(regex))) {
             var view = new chnh.Views.Entry({model: entry});
-            this.$el.append(view.render().el);
+            $entriesHtml.append(view.render().el);
             this.entryViews.push(view);
           }
         }
       }, this);
+      this.$el.html($entriesHtml);
       return this;
     },
     clearEntryViews: function () {
       _.each(this.entryViews, function (entryView) { entryView.remove(); });
+      this.$el.html('');
       this.entryViews = [];
     }
   });
