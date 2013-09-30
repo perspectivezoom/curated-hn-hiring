@@ -35,6 +35,12 @@ ul {
   text-decoration: none;
 }
 
+.site-notice {
+  background-color: papayawhip;
+  text-align: center;
+  padding: 5px;
+}
+
 .button {
   display: inline-block;
   padding: 4px 10px;
