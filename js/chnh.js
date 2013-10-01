@@ -33,14 +33,9 @@
       analytics.track('Clicked Filter', {value: $(e.currentTarget).text(), on: $(e.currentTarget).hasClass('on'), off: $(e.currentTarget).hasClass('off')});
       chnh.vent.trigger('filter');
     },
-    applyRegex: function () {
-      if (this.existingTimeout) {
-        clearTimeout(this.existingTimeout);
-      }
-      this.existingTimeout = setTimeout(function () {
+    applyRegex: _.debounce(function () {
         chnh.vent.trigger('regex');
-      }, 500);
-    },
+    }, 500),
     regex: function () {
       if (this.$(".regex").val()) {
         return new RegExp(this.$(".regex").val(), "i");
