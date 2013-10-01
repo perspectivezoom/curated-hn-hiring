@@ -30,6 +30,7 @@
       } else {
         $(e.currentTarget).addClass('on');
       }
+      analytics.track('Clicked Filter', {value: $(e.currentTarget).text(), on: $(e.currentTarget).hasClass('on'), off: $(e.currentTarget).hasClass('off')});
       chnh.vent.trigger('filter');
     },
     applyRegex: function () {
@@ -72,6 +73,7 @@
       this.$el.toggleClass('hidden');
     },
     toggleSort: function (e) {
+      analytics.track('Clicked Sort', {value: $(e.currentTarget).text()});
       if ($(e.currentTarget).text() === 'Location') {
         this.getLocation();
       } else {
@@ -109,6 +111,7 @@
       navigator.geolocation.getCurrentPosition(function (location) {
         $('.coords.lat input').val(location.coords.latitude);
         $('.coords.long input').val(location.coords.longitude);
+        analytics.track('Got Location', {value: $(e.currentTarget).text(), lat: $('.coords.lat input').val(), long: $('.coords.long input').val()});
         that.maybeLocationSort();
       });
     },
