@@ -78,7 +78,7 @@
       }
     },
     comparator: function () {
-      if ($('.sort.on').text() === 'Points') {
+      if ($('.sort.on').text() === 'Rank') {
         return function (entry) {
          return entry.get('index');
         };
