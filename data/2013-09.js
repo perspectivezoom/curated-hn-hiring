@@ -32,7 +32,7 @@ chnh.data = {
       "id": "6310239",
       "author": "robbiemitchell",
       "commentBody": "<span class=\"comment\"><font color=\"#000000\">Knewton - New York, NY (Union Square) - full-time<p>Knewton's mission is to bring personalized learning to the world.</p><p>Knewton is the world's leading adaptive learning technology provider. Knewton provides the tools and infrastructure needed to create continuously adaptive learning applications driven by real-time proficiency estimation, activity recommendations, analytics, and more. The world's largest and most innovative learning companies use Knewton technology to improve student achievement in K–12 (e.g.,Houghton Mifflin), higher education (e.g.,Pearson), global English Language Teaching (e.g.,Macmillan), and other markets.</p><p>Knewton has been recognized globally as a \"Technology Pioneer\" (World Economic Forum in Davos), one of the world's \"50 Most Innovative Companies\" (Fast Company), and one of \"The World's 100 Most Intriguing Entrepreneurs\" (Goldman Sachs).</p><p><a href=\"http://www.knewton.com/careers/\" rel=\"nofollow\">http://www.knewton.com/careers/</a></p><p>Some specific openings:</p><p>* Business Development - <a href=\"http://bit.ly/19XZsip\" rel=\"nofollow\">http://bit.ly/19XZsip</a></p><p>* Data Scientist - <a href=\"http://bit.ly/17zD54D\" rel=\"nofollow\">http://bit.ly/17zD54D</a></p><p>* Senior Software Engineer - Java/NoSQL - <a href=\"http://bit.ly/17zDdkD\" rel=\"nofollow\">http://bit.ly/17zDdkD</a></p><p>* Senior Software Engineer - Full Stack - <a href=\"http://bit.ly/18uZDi1\" rel=\"nofollow\">http://bit.ly/18uZDi1</a></p><p>* Senior Security Engineer - <a href=\"http://bit.ly/14lqxJY\" rel=\"nofollow\">http://bit.ly/14lqxJY</a></p><p>* Senior Product Manager - <a href=\"http://bit.ly/15it7yP\" rel=\"nofollow\">http://bit.ly/15it7yP</a></p></font><p><font color=\"#000000\">--&gt; For more follow <a href=\"http://twitter.com/knewton_jobs\" rel=\"nofollow\">http://twitter.com/knewton_jobs</a></font></p><p><font size=\"1\"><u><a href=\"reply?id=6310239&amp;whence=%69%74%65%6d%3f%69%64%3d%36%33%31%30%32%33%34\">reply</a></u></font></p></span>",
-      "companyName": "UNKNOWN",
+      "companyName": "Knewton",
       "tags": [],
       "locationNames": [
         "New York, NY"
@@ -196,7 +196,7 @@ chnh.data = {
       "id": "6310424",
       "author": "adammcnamara",
       "commentBody": "<span class=\"comment\"><font color=\"#000000\">Shopify (Ottawa, Toronto, Montreal, Canada). <a href=\"http://www.shopify.com/careers\" rel=\"nofollow\">http://www.shopify.com/careers</a></font><p><font color=\"#000000\">If you're interested in ecommerce, physical retail (point of sale), or payments product management, talk to me directly. We have many positions I haven't posted yet.</font></p><p><font size=\"1\"><u><a href=\"reply?id=6310424&amp;whence=%69%74%65%6d%3f%69%64%3d%36%33%31%30%32%33%34\">reply</a></u></font></p></span>",
-      "companyName": "UNKNOWN",
+      "companyName": "Shopify",
       "tags": [
         "ApplyToPerson"
       ],
@@ -226,7 +226,7 @@ chnh.data = {
       "id": "6310458",
       "author": "marcus",
       "commentBody": "<span class=\"comment\"><font color=\"#000000\">Wix - Tel Aviv, Israel<p>Looking for Front-End hacker.\nWix is looking for you, an experienced developer with passionate for Web development;  JavaScript, HTML5 ,CSS3, TDD, Angular.JS</p></font><p><font color=\"#000000\">Contact info in my profile</font></p><p><font size=\"1\"><u><a href=\"reply?id=6310458&amp;whence=%69%74%65%6d%3f%69%64%3d%36%33%31%30%32%33%34\">reply</a></u></font></p></span>",
-      "companyName": "UNKNOWN",
+      "companyName": "Wix",
       "tags": [
         "ApplyToPerson"
       ],
@@ -384,7 +384,7 @@ chnh.data = {
       "id": "6310508",
       "author": "asanwal",
       "commentBody": "<span class=\"comment\"><font color=\"#000000\">New York, NY - CB Insights<p>Full-time, H1 ok with US masters degree</p><p>National Science Foundation-backed firm that helps investors and Fortune 500 companies sense emerging trends and companies early using predictive analytics.</p><p>We are profitable and non-VC backed.</p><p>Looking for\n- full stack developers\n- tech industry analyst\n- machine learning engineers</p><p>More details here - www.cbinsights.com/jobs</p></font><p><font color=\"#000000\">Data featured in 200+ press articles this year - www.cbinsights.com/press</font></p><p><font size=\"1\"><u><a href=\"reply?id=6310508&amp;whence=%69%74%65%6d%3f%69%64%3d%36%33%31%30%32%33%34\">reply</a></u></font></p></span>",
-      "companyName": "UNKNOWN",
+      "companyName": "CB Insights",
       "tags": [
         "H1B"
       ],
