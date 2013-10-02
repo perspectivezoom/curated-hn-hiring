@@ -765,7 +765,7 @@ chnh.data = {
     "commentBody": "<span class=\"comment\"><font color=\"#000000\">San Francisco, CA - Zenbox. Software Engineer. [LOCAL | RELOCATE OK]<p>We're a YC company wrangling SaaS to work together (as they should), starting by bringing the biggest apps our customers use right into Gmail. We've been growing our team over the past few months, and looking to add even more awesome people.\nWe work with dozens of API's to show our users profiles of their customers without having to jump out of the email flow - imagine having <a href=\"http:\/\/www.youtube.com\/watch?v=WtzqRSlgqkw\" rel=\"nofollow\">http:\/\/www.youtube.com\/watch?v=WtzqRSlgqkw<\/a> available when helping customers.<\/p><p>Thousands of people use it every day for hours on end, and are happy to pay for it to make sure they can continue using it. But there's still so much polish and improvement possible.<\/p><p>We also spend time improving our tooling, and tools for other developers. As one example we've recently vastly improved the source-map capabilities of the ClojureScript compiler and added reified keywords to the runtime to make ClojureScript a better citizen on the web. We do it because we want to give back to the communities that have enabled us, because it helps us, and because it's interesting.<\/p><p>Looking for an engineer who loves the craft, who cares about building product, and is excited about helping customers. We're building a team that's able to reduce complexity others balk at into simple, easy to reason about system, so we can continue to move quickly and delight both customers and ourselves.<\/p><p>This is both UI and backend work.<\/p><\/font><p><font color=\"#000000\">Languages: Clojure, Clojurescript, Javascript.\nsean @ zenboxapp\n<a href=\"https:\/\/www.zenboxapp.com\" rel=\"nofollow\">https:\/\/www.zenboxapp.com<\/a><\/font><\/p><p><font size=\"1\"><u><a href=\"reply?id=6476237&amp;whence=%69%74%65%6d%3f%69%64%3d%36%34%37%35%38%37%39\">reply<\/a><\/u><\/font><\/p><\/span>",
     "companyName": "Zenbox",
     "tags": [
-      "ApplyToPerson"
+      "ApplyToPerson", "Relocate"
     ],
     "locationNames": [
       "San Francisco, CA"
@@ -946,7 +946,7 @@ chnh.data = {
     "commentBody": "<span class=\"comment\"><font color=\"#000000\">Whistle (Mission, San Francisco, CA) - <a href=\"http:\/\/whistle.com\" rel=\"nofollow\">http:\/\/whistle.com<\/a> - Local, relocation offered<p>Whistle is a growing technology company building new products for owners and vets in the &gt;$60B pet industry.  Venture-backed, our first product is an on-collar device that measures your dog's activity, giving you a new perspective on day-to-day behavior and long-term health trends.<\/p><p>Lead Android Engineer \u2014\nWe're looking for a pragmatic Android engineer to bring an awesome experience to our Android users.  Ideal candidates should have strong experience with Android, including multiple published apps to the Android Market, and have had some experience leading teams.<\/p><\/font><p><font color=\"#000000\">Apply at jobs@whistle.com, or see whistle.com for more information.<\/font><\/p><p><font size=\"1\"><u><a href=\"reply?id=6476275&amp;whence=%2f%78%3f%66%6e%69%64%3d%37%54%71%6e%38%70%67%6c%50%32%34%59%50%64%59%73%42%30%34%6c%65%75\">reply<\/a><\/u><\/font><\/p><\/span>",
     "companyName": "Whistle",
     "tags": [
-      
+      "Relocate"
     ],
     "locationNames": [
       "San Francisco, CA"
@@ -1022,7 +1022,7 @@ chnh.data = {
     "commentBody": "<span class=\"comment\"><font color=\"#000000\">Base - Chicago, IL and Krakow, Poland  - Full Time\n<a href=\"http:\/\/getbase.com\/careers\" rel=\"nofollow\">http:\/\/getbase.com\/careers<\/a><p>Who are we looking for?\nWe're looking for Developers for our Krakow office. Swing by our website for a listing of specific languages, but it ranges from mobile, to big data analysis.<\/p><p>In our Chicago office, we're looking to grow our Sales, Support and Marketing team.<\/p><p>View all the open positions at the link posted above.<\/p><p>What are we about?\nHere at Base, we're building the next generation of sales software leveraging new technology. The fundamental problem with CRM\/Sales software is that people don't use it. We're working to change that. Base is the #1 CRM for iOS and Android and is rapidly growing. We're passionate about design and are product focused. Come join our team today!<\/p><p>What do we focus on?\n    -Shipping product updates multiple times per day\n    -We embrace SOA, (who wants to maintain one big pile of code?)\n    -We like to take tackle tough problems. You likely won't find the answer on Google.<\/p><\/font><p><font color=\"#000000\">What do we offer?\n    -Casual, fun and very approachable work environment. We\u2019re a dynamic and smart team that you\u2019ll love working with.\n    -Choose your own gear.\n    -Flexible hours and vacation time.\n    -Personal Development Funds.\n    -Daily catered lunch (Krakow) and lots of caffeine.\n    -Hammocks, bean bags and sofas.\n    -Relocation expenses covered, if needed (Krakow).<\/font><\/p><p><font size=\"1\"><u><a href=\"reply?id=6476294&amp;whence=%2f%78%3f%66%6e%69%64%3d%4d%32%31%78%63%30%42%54%4c%62%73%75%74%42%4c%42%30%36%64%66%64%75\">reply<\/a><\/u><\/font><\/p><\/span>",
     "companyName": "Base",
     "tags": [
-      
+      "Relocate"
     ],
     "locationNames": [
       "Chicago, IL",
@@ -1702,7 +1702,7 @@ chnh.data = {
     "commentBody": "<span class=\"comment\"><font color=\"#000000\">Kites (Hong Kong) <a href=\"http:\/\/kites.hk\" rel=\"nofollow\">http:\/\/kites.hk<\/a><p>Kites is a POI data company focused on Hong Kong and Southeast Asia. We aggregate data from individual merchants, scrapers, human sources, etc. and syndicate to many publishers.<\/p><p>We've been around for ~1.5 years and have 7 amazing people.<\/p><p>We're looking for a senior dev \/ architect. You want to deeply understand the customer and business model and drive the technology roadmap. You should be whip-smart technically and ideally have a solid theoretical CS background. Experience leading a technical team a big plus.<\/p><\/font><p><font color=\"#000000\">This position will especially appeal to hackers interested in gaining foreign experience. :) We'll help you relocate. Email in profile.<\/font><\/p><p><font size=\"1\"><u><a href=\"reply?id=6476517&amp;whence=%2f%78%3f%66%6e%69%64%3d%6a%57%42%4f%67%6f%6f%4c%53%58%31%79%7a%59%75%6e%4c%43%70%4d%59%77\">reply<\/a><\/u><\/font><\/p><\/span>",
     "companyName": "Kites",
     "tags": [
-      "ApplyToPerson"
+      "ApplyToPerson", "Relocate"
     ],
     "locationNames": [
       "Hong Kong"
@@ -1927,7 +1927,7 @@ chnh.data = {
     "commentBody": "<span class=\"comment\"><font color=\"#000000\">Conspire - Boulder, CO - Full-Time<p>Conspire is a TechStars company founded in 2012. We analyze email data to give users detailed analytics on their email network and to understand the strength of connections between people. With this understanding, we maintain an always-up-to-date, weighted network of connections without any work on the part of users. When a user needs to reach a person or company, Conspire finds the strongest path of connections in the user's extended network.<\/p><p>We're located in downtown Boulder, Colorado.<\/p><p>QUALIFICATIONS<\/p><p>We're a small team, and we're looking for people to take on a lot of responsibility. You should be prepared to manage projects independently from start to finish, including gathering and refining requirements, evaluating potential approaches, soliciting feedback from teammates and experts, picking the right course of action given the company's goals and delivering stable, performant software that integrates seamlessly.<\/p><p>Our product is built primarily in Java, Scala, Rails and JavaScript, and we use several database technologies. We heavily leverage AWS infrastructure, manage source and issues on GitHub and continuously deploy code to production. In-depth experience with our technology stack is a plus but not a requirement.<\/p><p>BENEFITS<\/p><p>Along with all the benefits you'd expect (including relocation assistance), we also offer up to one month international travel per year. Work remotely from anywhere in the world with an Internet connection. We'll even give you $1,000 to send you on your way.<\/p><\/font><p><font color=\"#000000\">Contact me at alex@goconspire.com (or jobs@goconspire.com).<\/font><\/p><p><font size=\"1\"><u><a href=\"reply?id=6476590&amp;whence=%2f%78%3f%66%6e%69%64%3d%69%67%52%79%7a%59%66%64%39%69%35%32%70%6e%35%4e%48%6b%69%6f%4a%4c\">reply<\/a><\/u><\/font><\/p><\/span>",
     "companyName": "Conspire",
     "tags": [
-      "ApplyToPerson"
+      "ApplyToPerson", "Relocate"
     ],
     "locationNames": [
       "Boulder, CA"
@@ -2060,7 +2060,7 @@ chnh.data = {
     "commentBody": "<span class=\"comment\"><font color=\"#000000\">Link\u00f6ping, Sweden - Software &amp; HW engineers (Local, relocation offered)<p>Mediatek Sweden is developing a family of configurable baseband signal processors, with a full toolchain, simulator and RTL implementation. We're looking for Python, C++ and Verilog hackers. A definite plus if you think the X86\/ARM duopoly is boring and would like to work on more interesting architectures. Also a plus if you're a hardware guy or gal and have shipped asics and know about power optimization flows.<\/p><p>The fridge is always stocked with beer (selected by our resident beer geeks), competitive salaries, free gym. Sane and flexible working hours, 6 weeks of vacation that we actually expect you to use.<\/p><\/font><p><font color=\"#000000\">Contact me (HN username at gmail) if you want to have a chat about how things are here.<\/font><\/p><p><font size=\"1\"><u><a href=\"reply?id=6476627&amp;whence=%2f%78%3f%66%6e%69%64%3d%75%42%51%62%31%50%6c%67%48%37%75%70%55%4f%42%6c%77%4f%6c%63%44%33\">reply<\/a><\/u><\/font><\/p><\/span>",
     "companyName": "Mediatek Sweden",
     "tags": [
-      "ApplyToPerson"
+      "ApplyToPerson", "Relocate"
     ],
     "locationNames": [
       "Linkoping, Sweden"
