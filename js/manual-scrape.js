@@ -27,6 +27,8 @@
 
   var parseRow = function (index, row, data) {
     var $row = $(row);
+    if ($row.find('.comhead').first().find('a').last().attr('href') === undefined)
+      return data; // indicates a deleted entry
     var id = $row.find('.comhead').first().find('a').last().attr('href').match(/\d+/g)[0];
     var commentBody = $row.find('td.default .comment')[0].outerHTML;
 
@@ -72,7 +74,7 @@
     window.queue = [];
     _.each(_.keys(entries), function (key) {
       var entry = entries[key];
-      if (entry.locationNames) {
+      if (entry.locationNames && entry.locationNames.length != entry.locations.length) {
         _.each(entry.locationNames, function (locationName) {
           queue.push([key, {address: locationName}]);
         });
@@ -87,7 +89,7 @@
         console.log(locationName.address);
         geocoder.geocode(locationName, function (results, status) {
           var locationResult = results[0].geometry.location;
-          var latLong = {latitude: locationResult.ob, longitude: locationResult.pb};
+          var latLong = {latitude: locationResult.lb, longitude: locationResult.mb};
           console.log(latLong);
           if (_.every(entries[key].locations, function (location) {return !_.isEqual(location, latLong); })) {
             entries[key].locations.push(latLong);
@@ -98,5 +100,17 @@
         console.log('DONE!');
       }
     }, 2000);
+  };
+
+  //load Underscore first
+  window.appendData = function (accumulatedData, newData) {
+    var accumulatedEntryCount = _.keys(accumulatedData.entries).length;
+
+    _.each(_.keys(newData.entries), function (key) {
+      accumulatedData.entries[key] = newData.entries[key];
+      accumulatedData.entries[key].index = accumulatedData.entries[key].index + accumulatedEntryCount;
+    });
+
+    return accumulatedData;
   };
 }());

@@ -10,7 +10,7 @@
   });
 
   chnh.Views.Filters = Backbone.View.extend({
-    filterNames: ['ApplyToPerson', 'H1B', 'Intern', 'UI/UX', 'Remote', 'CoFounder'],
+    filterNames: ['ApplyToPerson', 'H1B', 'Intern', 'UI/UX', 'PartTime', 'Remote', 'Relocate'],
     events: {
       'click .filter': 'toggleFilter',
       'keyup .regex' : 'applyRegex'
