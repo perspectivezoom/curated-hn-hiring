@@ -106,7 +106,7 @@
       navigator.geolocation.getCurrentPosition(function (location) {
         $('.coords.lat input').val(location.coords.latitude);
         $('.coords.long input').val(location.coords.longitude);
-        analytics.track('Got Location', {value: $(e.currentTarget).text(), lat: $('.coords.lat input').val(), long: $('.coords.long input').val()});
+        analytics.track('Got Location', {value: JSON.stringify(location), lat: $('.coords.lat input').val(), long: $('.coords.long input').val()});
         that.maybeLocationSort();
       });
     },
