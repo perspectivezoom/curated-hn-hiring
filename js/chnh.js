@@ -13,7 +13,7 @@
     filterNames: ['ApplyToPerson', 'H1B', 'Intern', 'UI/UX', 'PartTime', 'Remote', 'Relocate'],
     events: {
       'click .filter': 'toggleFilter',
-      'keyup .regex' : 'applyRegex'
+      'keyup .regex' : 'onRegex'
     },
     initialize: function () {
       chnh.vent.on('toggle-filter', this.toggleOwnDisplay, this);
@@ -33,7 +33,7 @@
       analytics.track('Clicked Filter', {value: $(e.currentTarget).text(), on: $(e.currentTarget).hasClass('on'), off: $(e.currentTarget).hasClass('off')});
       chnh.vent.trigger('filter');
     },
-    applyRegex: _.debounce(function () {
+    onRegex: _.debounce(function () {
         chnh.vent.trigger('regex');
     }, 500),
     regex: function () {
@@ -216,7 +216,7 @@
     var filtersView = new chnh.Views.Filters({el: $('.filters')});
     filtersView.render();
     var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
-    var nave = new chnh.Views.Navigation({el: $('.nav')});
+    var nav = new chnh.Views.Navigation({el: $('.nav')});
     var entries = new chnh.Collections.Entries(_.values(chnh.data.entries));
     var entriesView = new chnh.Views.Entries({el: $('.entries'), collection: entries, filtersView: filtersView, sortsView: sortsView});
     entriesView.render();
