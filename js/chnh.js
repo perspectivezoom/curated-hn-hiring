@@ -101,7 +101,7 @@
         };
       }
     },
-    getLocation: function () {
+    getLocation: function (e) {
       var that = this;
       navigator.geolocation.getCurrentPosition(function (location) {
         $('.coords.lat input').val(location.coords.latitude);
