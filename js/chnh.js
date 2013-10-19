@@ -95,18 +95,18 @@
           } else {
             var distances = _.map(entry.get('locations'), function (location) {
               return geolib.getDistance({latitude: lat, longitude: long}, location) + entry.get('index'); //terrible secondary sort hack
-            });
+            }); 
             return Math.min.apply(undefined, distances);
           }
         };
       }
     },
-    getLocation: function (e) {
+    getLocation: function () {
       var that = this;
       navigator.geolocation.getCurrentPosition(function (location) {
         $('.coords.lat input').val(location.coords.latitude);
         $('.coords.long input').val(location.coords.longitude);
-        analytics.track('Got Location', {value: $(e.currentTarget).text(), lat: $('.coords.lat input').val(), long: $('.coords.long input').val()});
+        analytics.track('Got Location', {lat: $('.coords.lat input').val(), long: $('.coords.long input').val()});
         that.maybeLocationSort();
       });
     },
