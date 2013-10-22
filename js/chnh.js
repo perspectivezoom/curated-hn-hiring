@@ -213,12 +213,14 @@
   chnh.vent = _.extend({}, Backbone.Events);
 
   chnh.init = function () {
-    var filtersView = new chnh.Views.Filters({el: $('.filters')});
-    filtersView.render();
-    var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
-    var nav = new chnh.Views.Navigation({el: $('.nav')});
-    var entries = new chnh.Collections.Entries(_.values(chnh.data.entries));
-    var entriesView = new chnh.Views.Entries({el: $('.entries'), collection: entries, filtersView: filtersView, sortsView: sortsView});
-    entriesView.render();
+    $.getJSON('data/2013-10.json', function(json) {
+      var filtersView = new chnh.Views.Filters({el: $('.filters')});
+      filtersView.render();
+      var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
+      var nav = new chnh.Views.Navigation({el: $('.nav')});
+      var entries = new chnh.Collections.Entries(_.values(json.entries));
+      var entriesView = new chnh.Views.Entries({el: $('.entries'), collection: entries, filtersView: filtersView, sortsView: sortsView});
+      entriesView.render();
+    });
   };
 }(window.chnh));

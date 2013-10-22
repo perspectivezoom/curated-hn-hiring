@@ -1,4 +1,4 @@
-chnh.data = {
+{
   "entries": {
   "6475911": {
     "id": "6475911",
@@ -6437,4 +6437,4 @@ chnh.data = {
     "month": "October 2013",
     "url": "https:\/\/news.ycombinator.com\/item?id=6475879"
   }
-};
+}
