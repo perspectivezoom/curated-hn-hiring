@@ -31,10 +31,9 @@ var guessTags = function (entry) {
 
 var guessLocations = function (entry) {
   var commonLocations = [
-    [new RegExp("San Francisco"), "San Francisco, CA"],
-    [new RegExp("SF", "i"), "San Francisco, CA"],
-    [new RegExp("New York"), "New York, NY"],
-    [new RegExp("NY", "i"), "New York, NY"],
+    [new RegExp("San Francisco", "i"), "San Francisco, CA"],
+    [new RegExp("New York", "i"), "New York, NY"],
+    [new RegExp("NYC"), "New York, NY"],
     [new RegExp("London", "i"), "London, UK"]
   ];
   _.each(commonLocations, function (ar) {

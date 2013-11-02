@@ -131,7 +131,8 @@
     },
     expandEntry: function (e) {
       this.$('.gradient-mask').addClass('hidden');
-      this.$('.entry-details').animate({height: this.$('.comment').height()}, 'fast');
+      this.$('.entry-details').animate({height: this.$('.comment').height()}, 'fast'); //pre-November html
+      this.$('.entry-details').animate({height: this.$('.comment-body').height()}, 'fast');
       this.$('.entry-details').addClass('expanded');
     },
     collapseEntry: function (e) {
@@ -151,7 +152,8 @@
         );
       } else {
         this.$('.gradient-mask').addClass('hidden');
-        this.$('.entry-details').animate({height: this.$('.comment').height()}, 'fast');
+        this.$('.entry-details').animate({height: this.$('.comment').height()}, 'fast'); //pre-November html
+        this.$('.entry-details').animate({height: this.$('.comment-body').height()}, 'fast');
         this.$('.entry-details').addClass('expanded');
       }
     },
@@ -213,7 +215,7 @@
   chnh.vent = _.extend({}, Backbone.Events);
 
   chnh.init = function () {
-    $.getJSON('data/2013-10.json', function(json) {
+    $.getJSON('data/2013-11.json', function(json) {
       var filtersView = new chnh.Views.Filters({el: $('.filters')});
       filtersView.render();
       var sortsView = new chnh.Views.Sorts({el: $('.sorts')});
