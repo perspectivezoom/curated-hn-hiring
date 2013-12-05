@@ -122,7 +122,7 @@
   });
 
   chnh.Views.Entry = Backbone.View.extend({
-    template: _.template('<div class="entry-details"><div class="gradient-mask"></div><div class="comment-body"><%= commentBody %></div></div>'),
+    template: _.template('<div class="entry-details"><div class="gradient-mask"></div><div class="comment-body"><%= commentBody %> <a class="source button" href="https://news.ycombinator.com/item?id=<%= id %>">Source</a></div></div>'),
     tagName: 'li',
     className: 'entry',
     events: {
